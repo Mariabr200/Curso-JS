@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primeiros passos com DOM</title>
+  <style>
+    body {
+      background: #fcc;
+      color: lightcyan;
+      font: normal 16pt Times;
+    }
+
+    h1 {
+      color: #888;
+    }
+
+    p {
+      color: #777;
+    }
+
+    div {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> Iniciando estudos de DOM</h1>
+  <p>Aqui vai o resultado</p>
+  <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+  <div>Clique em mim</div>
+
+
+  <script>
+    var p1 = window.document.getElementsByTagName('p')[0]
+    window.document.write(p1.innerText)
+    //var d = window.document.getElementsByName('msg')[0]
+    //var d = window.document.getElementById('msg')
+    //d.style.background = 'green'
+    //d.innerText = 'Estou aguardando...'
+    var d = window.document.querySelector('div#msg')
+    d.style.background = 'blue'
+  </script>
+</body>
+
+</html>
+
+<!-- DOM 
+     Document
+     Object
+     Model
+     -> conjunto de objetos dentro do seu navegador que vai dar acesso aos componentes internos do seu website.
+     Funciona quando estamos rodando JS dentro do navegador.
+     Árvore DOM:
+     ex:
+
+         -----------window-----------
+         |------------|-------------|
+      location     document      history   
+        --------------|--------------
+                     HTML
+            |----------------------|  
+           head                   body
+        |--------|          |-----|-----|-----|
+      meta      title       h1    p     p     div
+                            ------------|--------
+                                      strong
+  
+    window - janela do site:
+    location - localização do site
+    document - documento atual:
+      html:
+        head - cabeçalho:
+          meta
+          title
+        body - corpo
+          h1
+          p
+          p:
+            strong
+          div
+    history - guarda os dados 
+
+    Selecionando
+      por marca: getElementsByTagName()
+      por ID: getElementById()
+      por Nome: getElementByName()
+      por Classe: getElementsByClassName()
+      por Seletor: querySelector() ou querySelectorAll()
+-->
