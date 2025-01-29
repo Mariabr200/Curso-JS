@@ -1,0 +1,50 @@
+<!--Operadores (parte 2)
+      Relacionais (respostas em boolean):
+        5 > 2 -> true
+        7 < 4 -> false
+        8 >= 8 -> true
+        9 <= 7 -> false
+        5 == 5 -> true
+        4 != 4 -> false
+      Identidade:
+        5 == 5 -> true
+        5 == '5' -> true
+      Operador de igualdade restrita:
+        === -> do mesmo valor e do mesmo tipo
+        !== -> ''  ''    ''   '' '' ''    ''
+        5 === '5' -> false 
+      Lógicos:
+        ! - negação 
+        && conjunção -> e
+        || disjunção -> ou
+          Negação:
+            ! - true -> false
+            ! - false -> true
+          Conjunção:
+            true | && | true | -> true
+            true | && | false | -> false
+            false | && | true | -> false
+            false | && | false | -> false
+          Disjunção:
+            true | || | true | -> true
+            true | || | false | -> true
+            false | || | true | -> true
+            false | || | false | -> false
+              ex: > var a = 20
+              undefined
+              > var b = 15
+              undefined
+              > a > b && b % 2 == 0
+              false
+              > a <= b || b * 2 == 30
+              true
+      Precedência:
+        () ** / ...
+        >   <  >= ...
+        !
+        &&
+        ||
+      Ternário:
+        teste ? true : false
+        média >= 7.0 ? 'aprovado' : 'Reprovado'
+-->
