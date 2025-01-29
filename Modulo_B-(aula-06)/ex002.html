@@ -25,9 +25,9 @@
   <!-- window.confirm('') - faz uma confirmação, vc tem a opção de 'ok' ou 'cancelar' -->
   <!-- window.prompt('') - te dá a oportunidade de escrever na tela. É tipo uma pergunta -->
   <script>
-    window.alert('Minha primeira mensagem!')
-    window.confirm('Está gostando de JS?')
-    window.prompt('Qual é o seu nome?')
+    var nome = window.prompt('Qual é o seu nome?')
+    window.alert('É um grande prazer te conhecer, ' + nome + '!')
+    //para guardar seu nome, é necessário colocar um outro window.alert, colocando a variável nome, para que o seu nome(dado) guardado, possa ser enviado e mostrado na página.
   </script>
 </body>
 
