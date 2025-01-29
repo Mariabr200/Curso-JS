@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font: normal 20pt Arial;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var nome = window.prompt("Qual é o seu nome?")
+    document.write(`Olá, ${nome}, seu nome tem ${nome.length} letras.`)
+    document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}`)
+    //document.write - escreve na tela
+  </script>
+</body>
+<!--
+      Formatando Números
+      var n1 = 1543.5
+      n1 = 1543.5
+      n1.toFixed() - caso você queira ver "mais casas depois da vírgula"
+      ex: n1.toFixed(2) = 1543.50 
+      n1.toLocaleString("pt-BR", {style: 'currency', currency: 'BRL'}) - ex: de vc querer colocar o salário em reais, tudo certinho, {} -> objeto.
+    -->
+
+</html>
