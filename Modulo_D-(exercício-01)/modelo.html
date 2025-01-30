@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Exercício</title>
+  <style>
+    body {
+      background: rgba(107, 107, 241);
+      font: normal 15pt Arial;
+      justify-items: center;
+    }
+
+    header {
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 500px;
+      margin: auto;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+    }
+
+    div {
+      text-align: center;
+      padding: 8px;
+    }
+
+    footer {
+      color: white;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body onload="carregar()">
+  <header>
+    <h1>Hora do Dia</h1>
+  </header>
+  <section>
+    <div id="msg">
+    </div>
+    <div id="foto">
+      <img id="imagem" src="manha.png" alt="Foto Manhã">
+    </div>
+  </section>
+  <footer>
+    <p>&copy; CursoemVídeo</em></p>
+  </footer>
+
+  <script>
+    function carregar() {
+      var msg = document.querySelector('div#msg')
+      var img = document.getElementById('imagem')
+      var data = new Date()
+      var hora = data.getHours()
+      msg.innerHTML = `Agora são ${hora} horas.`
+      if (hora >= 0 && hora < 12) {
+        img.src = 'manha.png'
+        document.body.style.background = '#e2cd9f'
+      } else if (hora >= 12 && hora <= 18) {
+        img.src = 'tarde.png'
+        document.body.style.background = '#b9846f'
+      } else {
+        img.src = 'noite.png'
+        document.body.style.background = '#515154'
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
+
+<!--Erros que cometi!
+    - não coloquei justify-items = center: para que os itens ficassem ao centro. (na realidade, apenas o '<p>&copy; CursoemVídeo</em></p>' não estava ao centro) 
+    - não coloquei o 'onload="carregar()"' no body. Dessa forma meu JS não estava funcionando. 
+    -   var img = document.getElementById('imagem');
+    tinha colocado "foto", e ai, as imagens não estavam trocando.-->
