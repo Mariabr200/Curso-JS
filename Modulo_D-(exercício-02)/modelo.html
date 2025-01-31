@@ -48,9 +48,9 @@
         <input type="number" name="txtano" id="txtano" min="0">
       </p>
       <p>Sexo:
-        <input type="radio" name="sex" id="mas" checked>
+        <input type="radio" name="radsex" id="mas" checked>
         <label for="mas">Maculino</label>
-        <input type="radio" name="sex" id="fem">
+        <input type="radio" name="radsex" id="fem">
         <label for="fem">Feminino</label>
       </p>
       <p>
@@ -68,16 +68,57 @@
   <script>
     function verificar() {
       var data = new Date()
+      //get.FullYear() - vai pegar 4 dígitos, ex: 2025
       var ano = data.getFullYear()
       var fano = document.getElementById('txtano')
       var res = document.querySelector('div#res')
 
-      if (fano.value.lenght == 0 || fano.value > ano) {
+      if (fano.value.lenght == 0 || Number(fano.value) > ano) {
         window.alert('[ERROR] Verifique os dados e tente novamente!')
       } else {
-        var fsex = document.getElementsByName('sex')
-        var idade = ano - Number('fano.value')
-        res.innerHTML = `Idade Calculada: ${idade}`
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(fano.value)
+        var genero = ''
+        //vai criar uma tag 'img'
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        //se oq for checado for o fsex[0], é pq é mas
+        if (fsex[0].checked) {
+          genero = 'Homem'
+          //se ele não está entre 0 e 10, podemos tirar do primeiro else if - idade >= 10
+          if (idade >= 0 && idade < 10) {
+            //Criança
+            img.setAttribute('src', 'criança-menino.png')
+          } else if (idade < 21) {
+            //Jovem
+            img.setAttribute('src', 'jovem-homem.png')
+          } else if (idade < 50) {
+            //Adulto
+            img.setAttribute('src', 'adulto-homem.png')
+          } else {
+            //idoso
+            img.setAttribute('src', 'idoso.png')
+          }
+        } else if (fsex[1].checked) {
+          genero = 'Mulher'
+          if (idade >= 0 && idade < 10) {
+            //Criança
+            img.setAttribute('src', 'criança-menina.png')
+          } else if (idade < 21) {
+            //Jovem
+            img.setAttribute('src', 'jovem-mulher.png')
+          } else if (idade < 50) {
+            //Adulto
+            img.setAttribute('src', 'adulto-mulher.png')
+          } else {
+            //idoso
+            img.setAttribute('src', 'idosa.png')
+          }
+        }
+        res.style.justifyContent = 'center'
+        res.style.textAlign = 'center'
+        res.innerHTML = `detectamos ${genero} com ${idade} anos.`
+        res.appendChild(img)
       }
     }
 
@@ -88,4 +129,5 @@
 </html>
 
 <!--
-get.FullYear() - vai pegar 4 dígitos, ex: 2025-->
+var idade = ano - Number(fano.value) - erro: tinha colocado entre aspas o que estava dentro do parenteses
+if (fano.value.lenght == 0 || {Number(fano.value)} > ano) - a parte com as chaves, eu não coloquei entre parenteses. mas precisa. -->
