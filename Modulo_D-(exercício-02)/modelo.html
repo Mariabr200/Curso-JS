@@ -48,6 +48,7 @@
         <input type="number" name="txtano" id="txtano" min="0">
       </p>
       <p>Sexo:
+        <!-- checked - obriga a escolher um ou outro -->
         <input type="radio" name="radsex" id="mas" checked>
         <label for="mas">Maculino</label>
         <input type="radio" name="radsex" id="fem">
@@ -91,10 +92,10 @@
             img.setAttribute('src', 'criança-menino.png')
           } else if (idade < 21) {
             //Jovem
-            img.setAttribute('src', 'jovem-homem.png')
+            img.setAttribute('src', 'jovem-h.png')
           } else if (idade < 50) {
             //Adulto
-            img.setAttribute('src', 'adulto-homem.png')
+            img.setAttribute('src', 'adulto-h.png')
           } else {
             //idoso
             img.setAttribute('src', 'idoso.png')
@@ -109,7 +110,7 @@
             img.setAttribute('src', 'jovem-mulher.png')
           } else if (idade < 50) {
             //Adulto
-            img.setAttribute('src', 'adulto-mulher.png')
+            img.setAttribute('src', 'adulto-m.png')
           } else {
             //idoso
             img.setAttribute('src', 'idosa.png')
@@ -130,4 +131,5 @@
 
 <!--
 var idade = ano - Number(fano.value) - erro: tinha colocado entre aspas o que estava dentro do parenteses
-if (fano.value.lenght == 0 || {Number(fano.value)} > ano) - a parte com as chaves, eu não coloquei entre parenteses. mas precisa. -->
+if (fano.value.lenght == 0 || {Number(fano.value)} > ano) - a parte com as chaves, eu não coloquei entre parenteses. mas precisa. 
+Sempre tente aos poucos, ou faça tudo e tente achar o seu erro. Melhor forma de descobrir o que está errando.-->
