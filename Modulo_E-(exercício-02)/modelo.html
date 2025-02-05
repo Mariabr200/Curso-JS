@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabuada</title>
+  <style>
+    body {
+      background: rgba(107, 107, 241);
+      font: normal 15pt Arial;
+
+    }
+
+    header {
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 500px;
+      margin: auto;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+    }
+
+    div {
+      justify-content: space-between;
+      text-align: start;
+      padding: 8px;
+    }
+
+    div.span {
+      
+    }
+
+    footer {
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tabuada</h1>
+  </header>
+  <section>
+    <div>
+      <p>Número: <input type="number" name="tab" id="txtt"></p> <span><input class="button" type="button" value="Gerador" onclick="Gerar()"></span>
+    </div>
+    <div id="res">
+      Preparando Contagem...
+    </div>
+  </section>
+  <footer>
+    <p>&copy; CursoemVídeo</em></p>
+  </footer>
+
+  <script>
+    function contar() {
+      let ini = document.getElementById('txti')
+      let fim = document.getElementById('txtf')
+      let passo = document.getElementById('txtp')
+      let res = document.getElementById('res')
+      if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+        window.alert('ERROR! Faltam dados!')
+      } else {
+        res.innerHTML = 'Contando: <br>'
+        //convertendo para número
+        let i = Number(ini.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
+        if (p <= 0) {
+          window.alert('Passo Inválido! Considerando PASSO 1')
+          p = 1
+        }
+        if (i < f) {
+          //contagem crescente
+          for (let c = i; c <= f; c += p) {
+            res.innerHTML += `${c} \u{1F449} `
+          }
+          //código para adicionar emojis (unicode emoji list/full emoji list v12.0) - precisa estar entre " `` ", para funcionar.
+          res.innerHTML += `\u{1F3C1}`
+        } else {
+          //contagem decrescente
+          for (let c = i; c >= f; c -= p) {
+            res.innerHTML += `${c} \u{1F449} `
+          }
+          res.innerHTML += `\u{1F3C1}`
+          //res.innerHTML - escreve no html o que está adicionando pelo JavaScript
+        }
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>
