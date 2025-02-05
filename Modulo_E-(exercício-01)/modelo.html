@@ -62,7 +62,35 @@
       let ini = document.getElementById('txti')
       let fim = document.getElementById('txtf')
       let passo = document.getElementById('txtp')
-      var res = document.querySelector('div#res')
+      let res = document.getElementById('res')
+      if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+        window.alert('ERROR! Faltam dados!')
+      } else {
+        res.innerHTML = 'Contando: <br>'
+        //convertendo para número
+        let i = Number(ini.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
+        if (p <= 0) {
+          window.alert('Passo Inválido! Considerando PASSO 1')
+          p = 1
+        }
+        if (i < f) {
+          //contagem crescente
+          for (let c = i; c <= f; c += p) {
+            res.innerHTML += `${c} \u{1F449} `
+          }
+          //código para adicionar emojis (unicode emoji list/full emoji list v12.0) - precisa estar entre " `` ", para funcionar.
+          res.innerHTML += `\u{1F3C1}`
+        } else {
+          //contagem decrescente
+          for (let c = i; c >= f; c -= p) {
+            res.innerHTML += `${c} \u{1F449} `
+          }
+          res.innerHTML += `\u{1F3C1}`
+          //res.innerHTML - escreve no html o que está adicionando pelo JS
+        }
+      }
     }
 
 
